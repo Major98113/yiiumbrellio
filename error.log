@@ -1,0 +1,2 @@
+[Mon Apr 15 11:49:45.814762 2019] [core:error] [pid 8349] [client 127.0.0.1:53828] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Mon Apr 15 11:49:47.196942 2019] [core:error] [pid 8341] [client 127.0.0.1:53830] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
