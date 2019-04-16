@@ -32,9 +32,13 @@ mime-type, и т.п.). Желательно их вынести в отдель�
 <br/>insert into users(group_id) values (1), (1), (1), (2), (1), (3);
 <br/>В этoй тaблицe, упoрядoчeнoй пo ID неoбхoдимo:
 <br/>1. Выделить нeпрeрывныe гpyппы пo group_id с yчетoм yкaзaннoгo пopядкa записей (их 4)
-
+<h6>Решение:</h6>
+<br/>select sum(g) from (select case when group_id =lag(group_id) over (order by id) then 0 else 1 end as g from users1 )as res
 <br/>2. Подсчитать количество записей в каждой группе
-<h3>Решение:</h3>
-<br/> select group_id,count(group_id) from users group by group_id order by count(group_id)DESC
+<h6>Решение:</h6>
+<br/> SELECT COUNT(*), group_id FROM ( SELECT ROW_NUMBER() OVER (ORDER BY id) - ROW_NUMBER() OVER (PARTITION BY group_id ORDER BY id) as res, id, group_id FROM users1 )RegroupedTable GROUP BY group_id,res
 
 <br/>3. Вычислить минимальный ID записи в группe
+<h6>Решение:</h6>
+<br/>select g from (select case when group_id =lag(group_id) over (order by id) then null else group_id end as g
+from users1 )as res where g is not null
