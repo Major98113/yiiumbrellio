@@ -16,6 +16,9 @@ $this->title = 'My Yii Application';
     <hr/>
     <?=FileRead::widget(['path' => 'https://www.w3.org/TR/PNG/iso_8859-1.txt', 'searchStr' => 'BROKEN' ]); ?>
     <hr/>
-
+    <?=FileRead::widget(['path' => 'https://www.w3.org/TR/PNG/iso_8859-1.txt', 'searchStr' => 'BRssOKEN' ]); ?>
+    <hr/>
+    <?=FileRead::widget(['path' => 'https://www.w3.org/TR/PNG/iso_885232332239-1', 'searchStr' => 'BRssOKEN' ]); ?>
+    <hr/>
 
 </div>
