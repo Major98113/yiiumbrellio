@@ -1,53 +1,21 @@
 <?php
-
+use major98113\umbrelliotest\AutoloadExample;
+use major98113\umbrelliotest\FileRead;
 /* @var $this yii\web\View */
 
 $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
+    <?=FileRead::widget(['path' => Yii::getAlias('@webroot').'/test.txt', 'searchStr' => 'venenatis' ]); ?>
+    <hr/>
+    <?=FileRead::widget(['path' => Yii::getAlias('@webroot').'/test.txt', 'searchStr' => 'venenatis' , 'maxSize' => '1KB' ]); ?>
+    <hr/>
+    <?=FileRead::widget(['path' => Yii::getAlias('@webroot').'/test.txt', 'searchStr' => 'venenatis' , 'maxSize' => '100KB' ]); ?>
+    <hr/>
+    <?=FileRead::widget(['path' => Yii::getAlias('@webroot').'/test', 'searchStr' => 'venenatis' , 'maxSize' => '20M' ]); ?>
+    <hr/>
+    <?=FileRead::widget(['path' => 'https://www.w3.org/TR/PNG/iso_8859-1.txt', 'searchStr' => 'BROKEN' ]); ?>
+    <hr/>
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
 </div>
